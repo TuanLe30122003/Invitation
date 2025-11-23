@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Great_Vibes, Dancing_Script } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  weight: "400",
   subsets: ["latin"],
+});
+
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Thiệp Mời",
-  description: "Lời mời tham dự cuộc hẹn đặc biệt",
+  title: "Invitation",
+  description: "Invitation to attend a special date",
 };
 
 export default function RootLayout({
@@ -25,7 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${greatVibes.variable} ${dancingScript.variable} antialiased`}
+        style={{ fontFamily: "var(--font-inter)" }}
       >
         {children}
       </body>
